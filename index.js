@@ -60,3 +60,4 @@ function traverseTree (structure, basepath, onFolderFound, onFileFound) {
 
 module.exports.getStructure = getStructure;
 module.exports.traverseTree = traverseTree;
+module.exports.getFileSize = getFileSize;

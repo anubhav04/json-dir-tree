@@ -3,8 +3,13 @@ Directory Structure JSON
 
 This module exposes functions with which you can:
 
-* Get a JSON structure of a folder (including subdirectories and files), note that you have specify the `filesystem` to use yourself
-* Traverse a structure, giving callbacks to execute when a file or folder is found
+* Get a JSON tree/structure of a folder (including subdirectories and files), note that you have specify the `filesystem` to use yourself. You can get JSON tree for a directory with `n` levels of children.
+* Traverse a structure, giving callbacks to execute when a file or folder is found.
+
+* It gives you all the details of the file and folder including date created, size in actual units, file extension and local path.
+
+* You can use to it get only size of file you are uploading: Size Units: ['bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB']
+
 
 ## Installation
     npm install --save json-dir-tree
@@ -91,6 +96,13 @@ function (folder, path) {
 function (file, path) {
     console.log('file found: ', file.name, 'at path: ', path);
 });
+```
+
+## Get file size
+```javascript
+var JsonDirTree = require('json-dir-tree');
+var basepath = 'path/to/some/file'; // this will be prepended to the paths found in the structure
+var fileSize = JsonDirTree.getFileSize(basepath);
 ```
 
 ## License MIT
