@@ -84,7 +84,7 @@ The structure retrieved from the example above can be traversed.
 var JsonDirTree = require('json-dir-tree');
 var basepath = 'path/to/some/folder'; // this will be prepended to the paths found in the structure
 
-JsonDirTree.traverseStructure(structure, basepath,
+JsonDirTree.traverseTree(structure, basepath,
 function (folder, path) {
     console.log('folder found: ', folder.name, 'at path: ', path);
 },

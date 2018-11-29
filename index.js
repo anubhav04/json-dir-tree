@@ -45,7 +45,7 @@ function getStructure (fs, dir, callback) {
     });
 }
 
-function traverseStructure (structure, basepath, onFolderFound, onFileFound) {
+function traverseTree (structure, basepath, onFolderFound, onFileFound) {
     structure.forEach(function (object) {
         if (object.type === 'folder' && object.children.length > 0) {
             onFolderFound(object, basepath);
@@ -59,4 +59,4 @@ function traverseStructure (structure, basepath, onFolderFound, onFileFound) {
 }
 
 module.exports.getStructure = getStructure;
-module.exports.traverseStructure = traverseStructure;
+module.exports.traverseTree = traverseTree;
