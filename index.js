@@ -13,6 +13,7 @@ function getFileSize(file){
 
 function getStructure (fs, dir, callback) {
     var results = [];
+    var localPath = '';
     var total = { files: 0, folders: 0 };
 
     fs.readdir(dir, function (err, list) {
@@ -29,12 +30,13 @@ function getStructure (fs, dir, callback) {
                     getStructure(fs, file, function (err, res, tot) {
                         total.folders = total.folders + tot.folders + 1;
                         total.files = total.files + tot.files;
-                        results.push({ name: path.basename(file), type: 'folder', children: res, children_count: res.length });
+                        results.push({ name: path.basename(file), type: 'folder', children: res, children_count: res.length, created_at: stat.birthtime, local_path: file });
                         if (!--itemsLeft) callback(null, results, total);
                     });
                 }
                 else {
-                    results.push({ type: 'file', name: path.basename(file), size: getFileSize(file) });
+                    var ext = path.extname(file||'').split('.');
+                    results.push({ type: 'file', name: path.basename(file), size: getFileSize(file), created_at: stat.birthtime, file_type: ext[ext.length - 1], local_path: file });
                     total.files++;
                     if (!--itemsLeft) callback(null, results, total);
                 }
