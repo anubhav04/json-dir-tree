@@ -93,8 +93,8 @@ function (file, path) {
 });
 ```
 
-##License MIT
-*MIT License
+## License MIT
+* MIT License
 
 Copyright (c) 2018 anubhav04
 
