@@ -3,6 +3,11 @@ Directory Structure JSON
 
 This module exposes functions with which you can:
 
+## Github
+``` html
+<a href= "https://github.com/anubhav04/json-dir-tree">Github</a>
+```
+
 * Get a JSON tree/structure of a folder (including subdirectories and files), note that you have specify the `filesystem` to use yourself. You can get JSON tree for a directory with `n` levels of children.
 * Traverse a structure, giving callbacks to execute when a file or folder is found.
 

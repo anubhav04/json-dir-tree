@@ -1,6 +1,6 @@
 {
   "name": "json-dir-tree",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Getting directory structures and traversing them in JSON",
   "main": "index.js",
   "author": "anubhav.techanthusiast@gmail.com",
@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/anubhav04/json-dir-tree.git#readme",
   "keywords": [
-    "json"
+    "json",
     "directory",
     "structure",
     "json-structure",
